@@ -1,8 +1,43 @@
 import { useNavigate } from "react-router-dom";
 
+/**
+ * ArticleCard component.
+ *
+ * This component renders a single article preview card on the homepage.
+ * When the card is clicked, it navigates programmatically to the article
+ * detail page using the article username, slug, and id.
+ *
+ * The component also displays article metadata such as publication name,
+ * author name, date, views, comments, reposts, thumbnail image, and subtitle.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.article - The article data object.
+ * @param {number|string} props.article.id - The unique article identifier.
+ * @param {string} props.article.username - The username used in the detail page URL.
+ * @param {string} props.article.fullname - The full name of the article author.
+ * @param {string} props.article.publication - The publication name of the article.
+ * @param {string} props.article.slug - The article slug used in the detail page URL.
+ * @param {string} props.article.title - The article title.
+ * @param {string} props.article.subtitle - The short article description.
+ * @param {string} props.article.date - The article publication date.
+ * @param {string} props.article.avatar - The author avatar image URL.
+ * @param {string} props.article.image - The article thumbnail image URL.
+ * @param {string|number} props.article.views - The article view count.
+ * @param {string|number} props.article.comments - The article comment count.
+ * @param {string|number} props.article.reposts - The article repost count.
+ * @returns {JSX.Element} The article preview card component.
+ */
 function ArticleCard({ article }) {
   const navigate = useNavigate();
 
+  /**
+   * Navigates to the article detail page.
+   *
+   * The generated URL follows this format:
+   * /detail/@username/article-slug-articleId
+   *
+   * @returns {void}
+   */
   const goToDetail = () => {
     navigate(`/detail/@${article.username}/${article.slug}-${article.id}`);
   };

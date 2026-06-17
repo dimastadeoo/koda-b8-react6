@@ -2,12 +2,36 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import ArticleCard from "../components/ArticleCard";
 
-function HomePage() {
+/**
+ * HomePage component.
+ *
+ * This component fetches article data from a local JSON file,
+ * stores the fetched data in React state, and renders a list of
+ * article cards on the homepage.
+ *
+ * It also handles loading and error states while fetching data.
+ *
+ * @returns {JSX.Element} The homepage view containing the navbar and article list.
+ */
+export default function HomePage() {
   const [articles, setArticles] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
+    /**
+     * Fetches articles from the local JSON file.
+     *
+     * This function requests article data from the public data folder,
+     * converts the response into JavaScript data using response.json(),
+     * and stores the result inside the articles state.
+     *
+     * If the request fails, the error message is stored in the error state.
+     *
+     * @async
+     * @function fetchArticles
+     * @returns {Promise<void>} A promise that resolves when the fetching process is complete.
+     */
     async function fetchArticles() {
       try {
         setLoading(true);
@@ -75,5 +99,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default HomePage;

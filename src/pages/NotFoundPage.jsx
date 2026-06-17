@@ -1,7 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-function NotFoundPage() {
+/**
+ * NotFoundPage component.
+ *
+ * This component displays a 404 error page when the user visits
+ * a route that does not exist or when the requested page cannot be found.
+ *
+ * It provides two navigation actions:
+ * - Navigate back to the homepage.
+ * - Navigate back to the previous page in browser history.
+ *
+ * @returns {JSX.Element} The 404 not found page view.
+ */
+export default function NotFoundPage() {
   const navigate = useNavigate();
 
   return (
@@ -43,5 +55,3 @@ function NotFoundPage() {
     </div>
   );
 }
-
-export default NotFoundPage;

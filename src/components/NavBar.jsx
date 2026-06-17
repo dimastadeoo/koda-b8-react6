@@ -1,5 +1,17 @@
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Navbar component.
+ *
+ * This component renders the main navigation bar used across pages.
+ * It contains the Medium-style brand title, search input, action buttons,
+ * and profile image.
+ *
+ * The brand title uses programmatic navigation to redirect the user
+ * back to the homepage when clicked.
+ *
+ * @returns {JSX.Element} The main navigation bar component.
+ */
 function Navbar() {
   const navigate = useNavigate();
 
