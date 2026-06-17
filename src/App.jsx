@@ -1,11 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router';
 
 // Import halaman dari folder components
-import HomePage from "./components/HomePage"
-import DetailPage from "./components/DetailPage"
-
-
-
+import HomePage from './pages/HomePage';
+import DetailPage from "./pages/DetailPage"
+import NotFoundPage from './pages/NotFoundPage';
 
 // Konfigurasi Peta Rute URL halaman
 const router = createBrowserRouter([
@@ -15,9 +13,18 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/detail",
+    path: "/detail/:username/:slug",
     element: <DetailPage />,
   },
+  {
+    path: "/not-found",
+    element: <NotFoundPage />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
+  }
+  
 
 ]);
 
