@@ -1,6 +1,6 @@
-# Menampilkan data secara dinamis menggunakan resource luar dengan fetch
+# Implementasi penggunaan Navigate dan Dynamic Path
 
-## tampilan ini merupakan data dinamis dari https://rickandmortyapi.com/api/character
+## tampilan ini adalah replika web medium.com dan contoh penggunaan Navigate dan Dynamic Path dalam 
 
 ## Screenshot:
 <table>
